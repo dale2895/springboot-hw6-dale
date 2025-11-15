@@ -18,10 +18,11 @@ pipeline {
         stage('Upload JAR to Nexus') {
             steps {
                 sh '''
-                JAR_FILE=target/spring-boot-complete-0.0.1-SNAPSHOT.jar
-
-                curl -v -u admin:admin123 --upload-file $JAR_FILE \
-                "http://localhost:8081/repository/maven-releases/com/example/springboot/spring-boot-complete/0.0.1-SNAPSHOT/spring-boot-complete-0.0.1-SNAPSHOT.jar"
+                    JAR_FILE=target/spring-boot-complete-0.0.1-SNAPSHOT.jar
+                    
+                    curl -v -u admin:120f7629-659c-4218-9c10-e4f5c6e813a1 \
+                        --upload-file $JAR_FILE \
+                        "http://localhost:8081/repository/maven-releases/com/example/springboot/spring-boot-complete/0.0.1-SNAPSHOT/spring-boot-complete-0.0.1-SNAPSHOT.jar"
                 '''
             }
         }
@@ -33,5 +34,4 @@ pipeline {
         }
     }
 }
-
 
